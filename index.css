@@ -1,0 +1,119 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-size: 30px; }
+
+ul li {
+  list-style: none;
+  display: block; }
+
+.container {
+  margin-left: 200px;
+  margin-top: 100px; }
+
+.link {
+  font-size: 60px;
+  position: relative;
+  padding-left: 90px;
+  text-decoration: none; }
+  .link:visited {
+    color: inherit; }
+  .link:hover {
+    color: blue; }
+  .link::before {
+    content: '';
+    position: absolute;
+    background-image: url(image.png);
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 60px;
+    background-size: 300px;
+    left: 8px;
+    top: 2px;
+    transition: 0.2s; }
+  .link--vk::before {
+    background-position: 0px -66px; }
+  .link--fb::before {
+    background-position: -74px -66px; }
+  .link--tw::before {
+    background-position: -147px -66px; }
+  .link--mr::before {
+    background-position: -221px -66px; }
+  .link--vk:hover::before {
+    background-position: 0px 0px; }
+  .link--fb:hover::before {
+    background-position: -74px 0px; }
+  .link--tw:hover::before {
+    background-position: -147px 0px; }
+  .link--mr:hover::before {
+    background-position: -221px 0px; }
+
+.form {
+  margin-top: 30px; }
+  .form .checkbox {
+    display: flex;
+    margin-top: 20px; }
+    .form .checkbox .btn {
+      width: 50px;
+      height: 30px;
+      margin-right: 10px;
+      border-radius: 30px;
+      background-color: #777;
+      position: relative; }
+      .form .checkbox .btn::before {
+        content: '';
+        width: 25px;
+        height: 25px;
+        background-color: #ffffff;
+        position: absolute;
+        border-radius: 50%;
+        top: 3px;
+        right: 23px;
+        transition: right .1s linear, background-color .1s linear; }
+
+[type="checkbox"] {
+  display: none; }
+  [type="checkbox"]:checked ~ .btn {
+    background-color: #16c216; }
+  [type="checkbox"]:checked ~ .btn::before {
+    top: 3px;
+    right: 2px; }
+
+.label {
+  display: flex;
+  margin: 30px; }
+  .label .round {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    border-radius: 50%;
+    border: 1px solid #777;
+    position: relative; }
+    .label .round::before {
+      content: '';
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      background-color: #7777;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      transition: .2s; }
+  .label [type="checkbox"]:checked ~ .round::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #16c216;
+    transform: translate(-50%, -50%);
+    border-radius: 50%; }
+
+/*# sourceMappingURL=index.css.map */

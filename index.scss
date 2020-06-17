@@ -1,0 +1,182 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 30px;
+}
+
+ul li {
+    list-style: none;
+    display: block;
+}
+
+.container {
+    margin-left: 200px;
+    margin-top: 100px;
+}
+
+.link {
+    font-size: 60px;
+    position: relative;
+    padding-left: 90px;
+    text-decoration: none;  
+
+    &:visited {
+        color: inherit;
+    }
+    &:hover {
+        color: blue;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        background-image: url(image.png);
+        background-repeat: no-repeat;
+        width: 70px;
+        height: 60px;
+        background-size: 300px;
+        left: 8px;
+        top: 2px;
+        transition: .2s ;
+    }
+
+    &--vk::before {
+        background-position: 0px -66px;
+    } 
+
+    &--fb::before {
+        background-position: -74px -66px;
+    }
+
+    &--tw::before {
+        background-position: -147px -66px;
+    }
+
+    &--mr::before {
+        background-position: -221px -66px;
+    }
+
+    &--vk:hover::before {
+        background-position: 0px 0px;
+    } 
+
+    &--fb:hover::before {
+        background-position: -74px 0px;
+    } 
+
+    &--tw:hover::before {
+        background-position: -147px 0px;
+    } 
+
+    &--mr:hover::before {
+        background-position: -221px 0px;
+    } 
+
+}
+
+
+
+.form {
+    margin-top: 30px;
+
+    .checkbox {
+        display: flex;
+        margin-top: 20px;
+
+        
+
+        .btn {
+            width: 50px;
+            height: 30px;
+            margin-right: 10px;
+            border-radius: 30px;
+            background-color: #777;
+            position: relative;
+
+            &::before {
+                content: '';
+                width: 25px;
+                height: 25px;
+                background-color: #ffffff;
+                position: absolute;
+                border-radius: 50%;
+                top: 3px;
+                right: 23px;
+                transition: right .1s linear, background-color .1s linear;
+
+            }
+
+        
+        }
+        
+        
+    }
+
+
+    
+        
+
+    
+
+}
+
+[type="checkbox"] {
+    display: none;
+
+    &:checked ~  .btn {
+            background-color: rgb(22, 194, 22);
+        }
+
+    &:checked ~  .btn::before {
+            top: 3px;
+            right: 2px;
+        }
+}
+
+
+
+.label {
+    display: flex;
+    margin: 30px;
+
+    .round {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+        border-radius: 50%;
+        border: 1px solid #777;
+        position: relative;
+
+        &::before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            background-color: #7777;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            transition: .2s;
+        }
+
+        }
+
+        [type="checkbox"]:checked ~ .round::before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            background-color: rgb(22, 194, 22);
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+        }
+}
